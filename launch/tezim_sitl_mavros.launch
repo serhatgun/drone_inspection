@@ -1,10 +1,9 @@
 <launch>
-    <arg name="world_path" default="$(find tezim)/sim/worlds/outdoor_village_3.world" />
+    <arg name="world_path" default="$(find tezim)/sim/worlds/tezim.world" />
     <arg name="gui" default="true"/>
     <arg name="ns" default="/"/>
     <arg name="model" default="iris_depth_camera"/>
-    <arg name="model1" default="original"/>
-
+    <arg name="n" default="1"/>
     <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
     <arg name="gcs_url" default="" />   <!-- GCS link is provided by SITL -->
     <arg name="tgt_system" default="1" />
@@ -37,9 +36,7 @@
         <arg name="world_name" value="$(arg world_path)" />
     </include>
 
-    <!-- Spawn vehicle model -->
     <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen"
           args="-sdf -database $(arg model) -model $(arg vehicle)">
     </node>
-
 </launch>
