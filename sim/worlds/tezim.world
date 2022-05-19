@@ -123,43 +123,5 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='original_model'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://original_model/original.stl</uri>
-              <scale>0.025 0.025 0.025</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://original_model/original.stl</uri>
-              <scale>0.025 0.025 0.025</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>5.0 -1.982 0 0 -0 0</pose>
-    </model>
   </world>
 </sdf>
