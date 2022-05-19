@@ -8,6 +8,14 @@
     <arg name="start_pos_y" default="0.5" />
     <arg name="start_pos_z" default="3.5" />
 
+    <!-- Given model position -->
+    <arg name="model_x" default="0.5" />
+    <arg name="model_y" default="0.5" />
+    <arg name="model_z" default="3.5" />
+
+    <arg name="model_file_name" default="original_model" />
+    <arg name="model_path" default="$(find tezim)/sim/models/$(arg model_file_name)/$(arg model_file_name).sdf" />
+
     <!-- Define a static transform from a camera internal frame to the fcu for every camera used -->
     <!-- Ros transformation -->
     <node pkg="tf" type="static_transform_publisher" name="tf_depth_camera"
@@ -17,6 +25,14 @@
     <include file="$(find tezim)/launch/tezim_sitl_mavros.launch" >
         <arg name="model" value="iris_depth_camera" />
         <arg name="world_path" value="$(arg world_path)" />
+    </include>
+
+    <!-- Spawn given model -->
+    <include file="$(find tezim)/launch/tezim_spawn_sdf.launch" >
+        <arg name="model_file_name" value="$(arg model_file_name)"/>
+        <arg name="x" value="$(arg model_x)" />
+        <arg name="y" value="$(arg model_y)" />
+        <arg name="z" value="$(arg model_z)" />
     </include>
 
     <!-- Launch local planner -->
