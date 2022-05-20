@@ -1,8 +1,6 @@
 <launch>
     <arg name="model_file_name" default="original_model" />
     <arg name="model_path" default="$(find tezim)/sim/models/$(arg model_file_name)/$(arg model_file_name).sdf" />
-    <arg name="pointcloud_topics" default="[/camera/depth/points]"/>
-    <arg name="camera_frame_id" default="camera_link"/>
     <arg name="x" default="5.0" />
     <arg name="y" default="5.0" />
     <arg name="z" default="2.0" />
